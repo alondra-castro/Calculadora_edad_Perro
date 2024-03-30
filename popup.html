@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora para Perros</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        select, input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #results {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            text-align: left;
+        }
+
+        #activityInfo {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            text-align: left;
+        }
+    </style>
+    <script src="calculadora.js"></script> 
+</head>
+<body>
+    <h1>Calculadora para Perros</h1>
+
+    <label for="breed">Selecciona la raza de tu perro:</label>
+    <select id="breed">
+        <option value="australian_shepherd">Australian Shepherd</option>
+        <option value="boxer">Bóxer</option>
+        <option value="dogo_canario">Dogo Canario</option>
+        <option value="setter_irlandes">Setter Irlandés</option>
+        <option value="boyero_berna">Boyero de Berna</option>
+        <option value="pastor_belga_malinois">Pastor Belga Malinois</option>
+        <option value="san_bernardo">San Bernardo</option>
+        <option value="cane_corso">Cane Corso</option>
+        <option value="pastor_shetland">Pastor de Shetland</option>
+        <option value="lhasa_apso">Lhasa Apso</option>
+        <option value="welsh_corgi_cardigan">Welsh Corgi Cardigan</option>
+        <option value="pastor_polaco_llanuras">Pastor Polaco de las Llanuras</option>
+        <option value="rhodesian_ridgeback">Rhodesian Ridgeback</option>
+        <option value="setter_ingles">Setter Inglés</option>
+        <option value="pastor_australiano">Pastor Australiano</option>
+        <option value="galgo_espanol">Galgo Español</option>
+        <option value="puli">Puli</option>
+        <option value="braco_aleman">Braco Alemán</option>
+        <option value="irish_wolfhound">Irish Wolfhound</option>
+        <option value="fox_terrier">Fox Terrier</option>
+        <option value="perro_agua_espanol">Perro de Agua Español</option>
+        <option value="samoyed">Samoyedo</option>
+        <option value="bulldog_americano">Bulldog Americano</option>
+        <option value="american_eskimo_dog">American Eskimo Dog</option>
+        <option value="perro_montana_pirineos">Perro de Montaña de los Pirineos</option>
+        <option value="collie_barbudo">Collie Barbudo</option>
+        <option value="spitz_japones">Spitz Japonés</option>
+        <option value="schnauzer_gigante">Schnauzer Gigante</option>
+        <option value="pinscher_miniatura">Pinscher Miniatura</option>
+        <option value="pastor_anatolia">Pastor de Anatolia</option>
+        <option value="perro_agua_portugues">Perro de Agua Portugués</option>
+        <option value="podenco_ibicenco">Podenco Ibicenco</option>
+        <option value="pointer_ingles">Pointer Inglés</option>
+        <option value="staffordshire_terrier_americano">Staffordshire Terrier Americano</option>
+        <option value="perro_agua_irlandes">Perro de Agua Irlandés</option>
+        <option value="akita_americano">Akita Americano</option>
+        <option value="terrier_tibetano">Terrier Tibetano</option>
+        <option value="saluki">Saluki</option>
+        <option value="puli_hungaro">Puli Húngaro</option>
+        <option value="laika_ruso">Laika Ruso</option>
+        <option value="chihuahua_pelo_largo">Chihuahua de Pelo Largo</option>
+        <option value="bichon_maltese">Bichón Maltés</option>
+        <option value="lebrel_escoces">Lebrel Escocés</option>
+        <option value="perro_agua_frances">Perro de Agua Francés</option>
+        <option value="perdiguero_chesapeake_bay">Perdiguero de Chesapeake Bay</option>
+        <option value="braco_weimar">Braco de Weimar</option>
+        <option value="basset_azul_gascuna">Basset Azul de Gascuña</option>
+        <option value="terrier_ruso_negro">Terrier Ruso Negro</option>
+        <option value="setter_gordon">Setter Gordon</option>
+        <option value="sabueso_espanol">Sabueso Español</option>
+        <option value="teckel_pelo_largo">Teckel de Pelo Largo</option>
+        <option value="american_pit_bull_terrier">American Pit Bull Terrier</option>
+        <option value="american_staffordshire_terrier">American Staffordshire Terrier</option>
+        <option value="staffordshire_bull_terrier">Staffordshire Bull Terrier</option>
+        <option value="american_bully">American Bully</option>
+        <option value="bull_terrier">Bull Terrier</option>
+        <option value="miniature_pinscher">Miniature Pinscher (Pincher Miniatura)</option>
+        <option value="german_pinscher">German Pinscher (Pincher Alemán)</option>
+        <option value="affenpinscher">Affenpinscher</option>
+        <option value="doberman_pinscher">Doberman Pinscher (Dobermann)</option>
+        <option value="austrian_pinscher">Austrian Pinscher (Pincher Austriaco)</option>
+        <option value="belgian_griffon">Belgian Griffon (Grifón Belga)</option> 
+        <option value="labrador">Labrador Retriever</option>
+        <option value="bulldog">Bulldog</option>
+        <option value="pastor_aleman">Pastor Alemán</option>
+        <option value="golden_retriever">Golden Retriever</option>
+        <option value="poodle">Poodle</option>
+        <option value="beagle">Beagle</option>
+        <option value="rottweiler">Rottweiler</option>
+        <option value="yorkshire_terrier">Yorkshire Terrier</option>
+        <option value="boxer">Boxer</option>
+        <option value="dachshund">Dachshund</option>
+        <option value="shih_tzu">Shih Tzu</option>
+        <option value="chihuahua">Chihuahua</option>
+        <option value="siberian_husky">Siberian Husky</option>
+        <option value="pug">Pug</option>
+        <option value="border_collie">Border Collie</option>
+        <option value="doberman">Doberman</option>
+        <option value="boston_terrier">Boston Terrier</option>
+        <option value="cocker_spaniel">Cocker Spaniel</option>
+        <option value="shetland_sheepdog">Shetland Sheepdog</option>
+        <option value="bulldog_frances">Bulldog Francés</option>
+        <option value="pomeranian">Pomerania</option>
+        <option value="bichon_frise">Bichon Frisé</option>
+        <option value="papillon">Papillon</option>
+        <option value="maltese">Maltese</option>
+        <option value="raza_mixta">Raza mixta (Mestizo)</option>
+        <option value="bull_terrier">Bull Terrier</option>
+        <option value="chow_chow">Chow Chow</option>
+        <option value="akita_inu">Akita Inu</option>
+        <option value="west_highland_white_terrier">West Highland White Terrier</option>
+        <option value="poodle_miniatura">Poodle Miniatura</option>
+        <option value="cavalier_king_charles_spaniel">Cavalier King Charles Spaniel</option>
+        <option value="dogo_argentino">Dogo Argentino</option>
+        <option value="poodle_toy">Poodle Toy</option>
+        <option value="caniche">Caniche</option>
+        <option value="shar_pei">Shar Pei</option>
+        <option value="collie">Collie</option>
+        <option value="gran_danes">Gran Danés</option>
+        <option value="terrier_escoces">Terrier Escocés</option>
+        <option value="basenji">Basenji</option>
+        <option value="dalmatian">Dálmata</option>
+        <option value="american_staffordshire_terrier">American Staffordshire Terrier</option>
+        <option value="pug_carlino">Pug Carlino</option>
+        <option value="basset_hound">Basset Hound</option>
+        <option value="dogo_de_burdeos">Dogo de Burdeos</option>
+        <option value="shiba_inu">Shiba Inu</option>
+        <option value="alaskan_malamute">Alaskan Malamute</option>
+        <option value="welsh_corgi_pembroke">Welsh Corgi Pembroke</option>
+        <option value="chinese_crested_dog">Crestado Chino</option>
+        <option value="miniature_schnauzer">Schnauzer Miniatura</option>
+    </select>
+
+    <label for="age">Edad de tu perro:</label>
+    <input type="number" id="age" min="0">
+    <select id="ageType">
+        <option value="years">Años</option>
+        <option value="months">Meses</option>
+    </select>
+
+    <label for="weight">Peso de tu perro en kg:</label>
+    <input type="number" id="weight" min="0">
+
+    <button id="calculateButton" >Calcular</button>
+
+    <div id="activityInfo">
+        <h2>Nivel de Actividad:</h2>
+        <p>Podemos medir si tu mascota se encuentra en un nivel adecuado de actividad según su peso, edad y raza.</p>
+        <ul>
+            <li><strong>Active:</strong> Nivel alto de ejercicio, beneficioso y reconfortante.</li>
+            <li><strong>Moderate:</strong> Nivel medio, disfruta del ejercicio.</li>
+            <li><strong>Sedentary:</strong> Nivel bajo, peligroso para la salud. Puede causar sobrepeso y problemas de piel.</li>
+        </ul>
+    </div>
+    <span>Si desean realizar una donación  <a href="https://paypal.me/FenixLunarTravel?country.x=PA&locale.x=es_XC"><b>Paypal</b></a></span><br>
+    <span>Si desean comunicarse con el desarrollador <a href="mailto:fenixlunartravel@gmail.com"><b>fenixlunartravel@gmail.com</b></a></span>
+    <h2>Resultados:</h2>
+    <div id="results">
+        
+    </div>
+
+   
+</body>
+</html>

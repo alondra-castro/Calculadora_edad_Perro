@@ -1,0 +1,14 @@
+{
+    "manifest_version": 3,
+    "name": "Calculadora_para_Perros",
+    "description": "Calculamos la edad de los perros en años humano",
+    "version": "1",
+    "icons": {
+      "128": "perro.png"
+    },
+   
+    "action":{
+      "default_popup": "popup.html"
+    }
+ 
+  }
